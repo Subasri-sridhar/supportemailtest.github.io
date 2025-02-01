@@ -42,7 +42,23 @@
         };
 
         const domain = window.location.hostname;
-        document.getElementById("support-email").textContent = emailMap[domain] || "support@default.com";
+        const referrerDomain = document.referrer ? new URL(document.referrer).hostname : null;
+        
+        let detectedEmail = "support@default.com";
+        
+        // Check for exact match
+        if (emailMap[domain]) {
+            detectedEmail = emailMap[domain];
+        } else if (emailMap[referrerDomain]) {
+            detectedEmail = emailMap[referrerDomain];
+        } else if (domain.endsWith(".apidog.io")) {
+            detectedEmail = "stagingsubasritest@synup.com"; // Default for API Dog domains
+        }
+        
+        document.getElementById("support-email").textContent = detectedEmail;
+        
+        console.log("Final Detected Email:", detectedEmail);
+
     </script>
 </body>
 </html>
