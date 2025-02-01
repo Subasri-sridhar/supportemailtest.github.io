@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Support Contact</title>
+</head>
+<body>
+    <p>For assistance, please contact support at: <span id="support-email">Loading...</span></p>
+
+    <script>
+        fetch("https://your-s3-bucket/support-email.json") // Replace with actual hosted JSON
+          .then(response => response.json())
+          .then(data => {
+            const domain = window.location.hostname;
+            const email = data[domain] || data["default"];
+            document.getElementById("support-email").textContent = email;
+          })
+          .catch(error => {
+            document.getElementById("support-email").textContent = "support@default.com";
+          });
+    </script>
+</body>
+</html>
