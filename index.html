@@ -33,7 +33,7 @@
     <script>
         const emailMap = {
             "synup.com": "support@synup.com",
-            "subasri-sridhar.github.io" : "something@github.io",
+            "subasri-sridhar.github.io" : "something@github.ioo",
           "cdpn.io": "support@cdpn.com",
             "3p1mgyasg4.apidog.io" : "stagingsubasritest@synup.com",
             "whitelabel1.com": "support@whitelabel1.com",
@@ -51,13 +51,12 @@
         } else if (emailMap[referrerDomain]) {
             detectedEmail = emailMap[referrerDomain];
         } else if (domain.endsWith(".apidog.io")) {
-            detectedEmail = "something test@synup.com"; // Default for API Dog domains
+            detectedEmail = "somethingtest@synup.com"; // Default for API Dog domains
         }
         
         document.getElementById("support-email").textContent = detectedEmail;
         
         console.log("Final Detected Email:", detectedEmail);
-
         console.log("Final referrerDomain:", referrerDomain);
         console.log("Final domain:", domain);
 
