@@ -33,9 +33,8 @@
     <script>
         const emailMap = {
             "synup.com": "support@synup.com",
-            "subasri-sridhar.github.io" : "somethin@github.io",
+            "subasri-sridhar.github.io" : "something@github.io",
           "cdpn.io": "support@cdpn.com",
-            "27x0urfh5w.apidog.io" : "stagingsubasritest@synup.com",
             "3p1mgyasg4.apidog.io" : "stagingsubasritest@synup.com",
             "whitelabel1.com": "support@whitelabel1.com",
             "whitelabel2.com": "support@whitelabel2.com"
@@ -52,7 +51,7 @@
         } else if (emailMap[referrerDomain]) {
             detectedEmail = emailMap[referrerDomain];
         } else if (domain.endsWith(".apidog.io")) {
-            detectedEmail = "stagingsubasritest@synup.com"; // Default for API Dog domains
+            detectedEmail = "something test@synup.com"; // Default for API Dog domains
         }
         
         document.getElementById("support-email").textContent = detectedEmail;
