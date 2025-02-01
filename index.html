@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Support Contact</title>
@@ -17,6 +17,31 @@
           .catch(error => {
             document.getElementById("support-email").textContent = "support@default.com";
           });
+    </script>
+</body>
+</html>
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Support Contact</title>
+</head>
+<body>
+    <p>For assistance, please contact support at: <span id="support-email">Loading...</span></p>
+
+    <script>
+        const emailMap = {
+            "synup.com": "support@synup.com",
+          "cdpn.io": "support@cdpn.com",
+            "27x0urfh5w.apidog.io" : "stagingsubasritest@synup.com",
+            "3p1mgyasg4.apidog.io" : "stagingsubasritest@synup.com",
+            "whitelabel1.com": "support@whitelabel1.com",
+            "whitelabel2.com": "support@whitelabel2.com"
+        };
+
+        const domain = window.location.hostname;
+        document.getElementById("support-email").textContent = emailMap[domain] || "support@default.com";
     </script>
 </body>
 </html>
